@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>App Rating</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!--Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<!--NaviBar-->
+<nav class="navbar navbar-default navbar-inverse">
+    <div class="container  col-lg-12">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <img alt="Brand" style="float: left; margin-left: -10px;margin-top: 1px;"
+                 src="{% static "images/logo_0.png" %}" height="52" width="52*3">
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="{{ home }}"><a href="/apprating/">Home <span class="sr-only">(current)</span></a></li>
+                <li class="{{ editor }}"><a href="/apprating/recommend/">Editor's Recommendation</a></li>
+                <li class="{{ ranklist }}"><a href="/apprating/ranklist/">Ranklist</a></li>
+                <li class="{{ newarrival }}"><a href="/apprating/newarrival/">New Arrival</a></li>
+
+                <li class="dropdown {{ categories }}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Categories<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Lifestyle</a></li>
+                        <li><a href="#">Food & Drink</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Photo & Video</a></li>
+
+                        <!-- <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li> -->
+                    </ul>
+                </li>
+
+            </ul>
+
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" size="20" placeholder="Search APPS">
+                </div>
+                <button type="submit" class="btn btn-default">Go</button>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#login">
+                        Sign in
+                    </button>
+                </li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!-- My model here for sign in -->
+<div class="modal fade" id="login" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sign In</h2>
+            </div>
+            <div class="modal-body">
+
+                <!-- a form for login -->
+{#                <form>#}
+{#                    <div class="form-group">#}
+{##}
+{#                        <label for="exampleInputEmail1">Email address</label>#}
+{#                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">#}
+{#                    </div>#}
+{#                    <div class="form-group">#}
+{#                        <label for="exampleInputPassword1">Password</label>#}
+{#                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">#}
+{#                    </div>#}
+{#                    <button type="submit" class="btn btn-default">Sign in</button>#}
+{#                </form>#}
+                <form id="user_form" method="post" action="" enctype="">
+                    {}
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- My model here for register -->
+<div class="modal fade" id="register" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Welcome to be our membership</h2>
+            </div>
+            <div class="modal-body">
+
+                <!-- a form for login -->
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputNickname">Nickname</label>
+                        <input type="text" class="form-control" id="exampleInputNickname" placeholder="Nickname">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">Confirm Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2"
+                               placeholder="Confirm Password">
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Create Account</button>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Content-->
+{% block content %}{% endblock %}
+
+<!--footer-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12"
+             style="height:30px;background-color:#2c2c2c; padding-bottom: 2px;margin-bottom: 0px;margin-top: 5px;color: #FFFFFF;">
+            It's a footer.
+        </div>
+    </div>
+</div>
+
+<!-- jquery file CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
