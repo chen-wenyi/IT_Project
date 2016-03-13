@@ -21,8 +21,5 @@ def categories(request):
     context_dict={'categories':'active'}
     return render(request,'index.html',context_dict)
 
-def app(request):
-    return render(request,'app.html')
 
-def nav(request):
-    return render(request, 'nav.html')
+
