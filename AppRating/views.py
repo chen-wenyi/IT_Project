@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    context_dict={'home':'active'}
+    context_dict={'home':'active',}
     return render(request,'index.html',context_dict)
 
 def editorRecommend(request):
@@ -20,3 +20,6 @@ def newArrival(request):
 def categories(request):
     context_dict={'categories':'active'}
     return render(request,'index.html',context_dict)
+
+
+
