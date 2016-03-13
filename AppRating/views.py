@@ -22,7 +22,6 @@ def categories(request):
     context_dict={'categories':'active'}
     return render(request,'index.html',context_dict)
 
-<<<<<<< HEAD
 def register(request):
 
     # A boolean value for telling the template whether the registration was successful.
@@ -64,7 +63,3 @@ def register(request):
     return render(request,
             'rango/register.html',
             {'user_form': user_form, 'registered': registered} )
-=======
-
-
->>>>>>> chen-wenyi/master

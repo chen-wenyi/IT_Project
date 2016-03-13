@@ -6,11 +6,6 @@ urlpatterns = patterns('',
                        url(r'^recommend/', views.editorRecommend, name='recommend'),
                        url(r'^ranklist/',views.rankList,name='ranklist'),
                        url(r'^newarrival/',views.newArrival,name='newarrival'),
-<<<<<<< HEAD
                        url(r'^categories/',views.categories,name='categories'),
                        url(r'^register/$', views.register, name='register'),
-=======
-
-
->>>>>>> chen-wenyi/master
                        )
